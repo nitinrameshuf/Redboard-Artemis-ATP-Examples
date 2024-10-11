@@ -1,28 +1,21 @@
-//Scripts for Redboard Artemis: https://github.com/nitinrameshuf/Redboard-Artemis-ATP-Examples/
-
-
-//Led Blink 
-
 // Define the pin numbers for the LEDs
-const int onboardLedPin = LED_BUILTIN; // Onboard LED
-const int externalLedPin = 0;          // External LED is connected to D0 (can be changed to any available pin)
+const int onboardLedPin = 5; // Onboard LED number 5
+const int externalLedPin = 18; // External LED is D18
 
 void setup() {
-  // Initialize the external LED pin as output
+  // Initialize both pins as output
+  pinMode(onboardLedPin, OUTPUT);
   pinMode(externalLedPin, OUTPUT);
-  // No need to set pinMode for onboard LED (handled internally)
 }
 
 void loop() {
-  // Turn the onboard LED on
-  digitalWriteLED(HIGH);
-  // Turn the external LED on
+  // Turn both LEDs on
+  digitalWrite(onboardLedPin, HIGH);
   digitalWrite(externalLedPin, HIGH);
   delay(1000); // Wait for a second
 
-  // Turn the onboard LED off
-  digitalWriteLED(LOW);
-  // Turn the external LED off
+  // Turn both LEDs off
+  digitalWrite(onboardLedPin, LOW);
   digitalWrite(externalLedPin, LOW);
   delay(1000); // Wait for a second
 }
